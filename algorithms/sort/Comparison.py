@@ -8,8 +8,28 @@ def insertion_sort():
     print("insertion sort test!")
 
 
-def quick_sort():
-    print("quick sort test!")
+def quick_sort(seq):
+    """
+    :param seq: sequence of numbers
+    :param lo: lower bound suffix
+    :param hi: higher bount suffix
+    :return:
+    """
+    def qsort(seq, start, end):
+        pass
+
+    def partition(seq, start, end):
+        pass
+
+    def choosepivot(start, end):
+        pass
+
+    qsort(seq, 0, len(seq))
+
+
+
+
+
 
 
 def merge_sort():
