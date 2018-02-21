@@ -9,13 +9,16 @@ class ListNode:
 
 
 class LinkedList:
-    def __init__(self, ls: list):
+    def __init__(self, ls: list=None):
         self.head = self.link(ls)
-        self.size = len(ls)
+        self.size = len(ls) if ls else 0
 
     def gen_node(ls: list):
-        for i in ls:
-            yield ListNode(i)
+        if ls:
+            for i in ls:
+                yield ListNode(i)
+        else:
+            return None
 
     def link(self, ls) -> ListNode:
         curr = head = ListNode(None)
@@ -25,13 +28,28 @@ class LinkedList:
         return head.next
 
     def traverse(self):
+        """
+        Traverse a linked list
+        :return: None
+        """
         curr = self.head
         while curr:
             print("{} ->".format(curr.val), end=" ")
             curr = curr.next
         print("Null")
 
+    def sethead(self, head):
+        """
+        Set head of a linked list to a given head.
+        A roundabout way to give another constructor
+        :return: ListNode
+        """
+        self.head = head
+
 
 if __name__ == "__main__":
-    ll = LinkedList([1, 2, 3, 4, 5, 6])
-    ll.traverse()
+    l1 = LinkedList([1, 2, 3, 4, 5, 6])
+    l1.traverse()
+    l2 = LinkedList()
+    l2.sethead(l1.head)
+    l2.traverse()
