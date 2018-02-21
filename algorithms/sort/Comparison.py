@@ -1,5 +1,4 @@
-# Insertion sort algorithm
-# from collections import Iterable
+# Comparison based sorting algorithms
 
 
 def insertion_sort():
