@@ -10,7 +10,8 @@ class ListNode:
 
 class LinkedList:
     def __init__(self, ls: list=None):
-        self.head = self.link(ls)
+        if ls:
+            self.head = self.link(ls)
         self.size = len(ls) if ls else 0
 
     def gen_node(ls: list):
